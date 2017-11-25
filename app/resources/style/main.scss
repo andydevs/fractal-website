@@ -10,10 +10,7 @@
 $main-font: "Calibri", sans-serif;
 
 // Coloring
-$primary-color: #0600a7;
-
-// Screen width
-$mobile-width: 500px;
+$primary-color: #2d28a2;
 
 // Flex spacing mixins
 @mixin row-group {
@@ -41,6 +38,7 @@ $mobile-width: 500px;
 // Imports
 @import "navbar",
         "jumbotron",
+        "page",
         "mobile/navbar-m",
         "mobile/jumbotron-m";
 

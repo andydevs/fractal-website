@@ -10,7 +10,8 @@ import React, { Component } from 'react'
 import MediaQuery from 'react-responsive'
 
 // Mobile width
-const MOBILE_WIDTH = '470px'
+const MOBILE_WIDTH = 500
+const MOBILE_UNITS = 'px'
 
 /**
  * Responsively switches between desktop and mobile
@@ -32,10 +33,10 @@ export default class ResponsiveSwitcher extends Component {
         // Return jsx
         return (
             <div className='responsive'>
-                <MediaQuery query={'(min-width: '+MOBILE_WIDTH+')'}>
+                <MediaQuery query={'(min-width:'+(MOBILE_WIDTH+1)+MOBILE_UNITS+')'}>
                     <DesktopComponent {...this.props}/>
                 </MediaQuery>
-                <MediaQuery query={'(max-width: '+MOBILE_WIDTH+')'}>
+                <MediaQuery query={'(max-width:'+MOBILE_WIDTH+MOBILE_UNITS+')'}>
                     <MobileComponent {...this.props}/>
                 </MediaQuery>
             </div>

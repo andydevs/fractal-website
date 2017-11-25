@@ -1,0 +1,93 @@
+/**
+ * Fractal Website
+ *
+ * Test for designing websites using ReactJS and Webpack
+ *
+ * Author:  Anshul Kharbanda
+ * Created: 11 - 24 - 2017
+ */
+.page-content {
+    // Padding
+    font-family: $main-font;
+    font-size: 12pt;
+
+    // Padding
+    padding: 10pt;
+
+    // Headers
+    h1,h2,h3,h4,h5 {
+        color: $primary-color;
+        margin: 0pt;
+    }
+
+    // Add underline to h1
+    h1 { border-bottom: 1pt solid $primary-color; }
+
+    // Color emphasis
+    em { color: $primary-color; }
+    strong { color: $primary-color; }
+
+    // Links
+    a {
+        @include faded;
+
+        // Font and sizing
+        padding: 5pt;
+        font-weight: bold;
+
+        // Coloring
+        color: $primary-color;
+        text-decoration: none;
+        &:hover {
+            background-color: $primary-color;
+            color: white;
+        }
+    }
+
+    // Tables
+    table {
+        width: 100%;
+
+        // Handle padding
+        th,td { padding: 5pt; }
+
+        // Header
+        th {
+            color: $primary-color;
+            border-bottom: 1pt solid $primary-color;
+        }
+    }
+
+    // Code segments
+    pre {
+        padding: 10pt 10pt;
+        background-color: lighten($primary-color, 55%);
+        border-radius: 2pt;
+    }
+    code {
+        background-color: lighten($primary-color, 55%);
+        padding: 2pt;
+    }
+    pre > code { padding: 0pt; }
+
+    // Blockquote
+    blockquote {
+        // Spacing
+        margin: 10pt 0pt 10pt 30pt;
+        padding: 0pt 10pt;
+
+        // Side border
+        border-left: 2pt solid $primary-color;
+
+        // Text handling
+        text-align: justify;
+        font-size: 14pt;
+
+        // Blockquote within blockquote
+        blockquote {
+            // Spacing
+            margin: 10pt 0pt;
+            padding: 0pt 10pt;
+        }
+    }
+}
