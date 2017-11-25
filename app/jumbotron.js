@@ -7,7 +7,7 @@
  * Created: 11 - 24 - 2017
  */
 import React, { Component } from 'react'
-import { Mobile, Desktop } from './responsive'
+import ResponsiveSwitcher from './responsive'
 
 /**
  * Jumbotron component for Desktop
@@ -73,10 +73,10 @@ export default class Jumbotron extends Component {
      */
     render() {
         return (
-            <div>
-                <Mobile><JumbotronM {...this.props}/></Mobile>
-                <Desktop><JumbotronD {...this.props}/></Desktop>
-            </div>
+            <ResponsiveSwitcher
+                onDesktop={JumbotronD}
+                onMobile={JumbotronM}
+                {...this.props}/>
         )
     }
 }

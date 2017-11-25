@@ -13,45 +13,32 @@ import MediaQuery from 'react-responsive'
 const MOBILE_WIDTH = '470px'
 
 /**
- * Renders this view if on desktop
+ * Responsively switches between desktop and mobile
  *
  * Author:  Anshul Kharbanda
- * Created: 11 - 24 - 2017
+ * Created: 11 - 25 - 2017
  */
-export class Desktop extends Component {
+export default class ResponsiveSwitcher extends Component {
     /**
      * Renders component
      *
      * @return component rendering
      */
     render() {
-        // Return appropriate props
-        return (
-            <MediaQuery query={'(min-width: '+MOBILE_WIDTH+')'}>
-                {this.props.children}
-            </MediaQuery>
-        )
-    }
-}
+        // Extract component
+        let DesktopComponent = this.props.onDesktop
+        let MobileComponent = this.props.onMobile
 
-/**
- * Renders this view if on mobile
- *
- * Author:  Anshul Kharbanda
- * Created: 11 - 24 - 2017
- */
-export class Mobile extends Component {
-    /**
-     * Renders component
-     *
-     * @return component rendering
-     */
-    render() {
-        // Return appropriate props
+        // Return jsx
         return (
-            <MediaQuery query={'(max-width: '+MOBILE_WIDTH+')'}>
-                {this.props.children}
-            </MediaQuery>
+            <div className='responsive'>
+                <MediaQuery query={'(min-width: '+MOBILE_WIDTH+')'}>
+                    <DesktopComponent {...this.props}/>
+                </MediaQuery>
+                <MediaQuery query={'(max-width: '+MOBILE_WIDTH+')'}>
+                    <MobileComponent {...this.props}/>
+                </MediaQuery>
+            </div>
         )
     }
 }

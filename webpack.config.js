@@ -36,12 +36,17 @@ module.exports = {
                 test: /\.(svg|jpg|jpeg|png)$/,
                 exclude: /node_modules/,
                 loader: 'url-loader'
+            },
+            {
+                test: /\.(markdown|md)$/,
+                exclude: /node_modules/,
+                loader: 'raw-loader'
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './app/resources/html/index.html'
+            template: 'app/resources/html/index.html'
         })
     ]
 }

@@ -8,7 +8,7 @@
  */
 import React, { Component } from 'react'
 import AnimateHeight from 'react-animate-height'
-import { Mobile, Desktop } from './responsive'
+import ResponsiveSwitcher from './responsive'
 
 /**
  * Mobile Navbar
@@ -59,13 +59,11 @@ class NavbarM extends Component {
                 </div>
                 <AnimateHeight duration={500} height={(this.state.toggled ? 'auto' : '0')}>
                     <ul className='nav-link-set-m'>
-                        {this.props.navlinks.map((navlink, i) => {
-                            return (
-                                <li className='nav-link-m' key={i}>
-                                    <a href={navlink.href}>{navlink.title}</a>
-                                </li>
-                            )
-                        })}
+                        {this.props.navlinks.map((navlink, i) => (
+                            <li className='nav-link-m' key={i}>
+                                <a href={navlink.href}>{navlink.title}</a>
+                            </li>
+                        ))}
                     </ul>
                 </AnimateHeight>
             </div>
@@ -89,16 +87,14 @@ class NavbarD extends Component {
         return (
             <div className='navbar'>
                 <div className='nav-header'>
-                    <a className='nav-title' href='#'>{this.props.title}</a>
+                    <a className='nav-title' href='{this.props.home}'>{this.props.title}</a>
                 </div>
                 <ul className='nav-link-set'>
-                    {this.props.navlinks.map((navlink, i) => {
-                        return (
-                            <li className='nav-link' key={i}>
-                                <a href='{navlink.href}'>{navlink.title}</a>
-                            </li>
-                        )
-                    })}
+                    {this.props.navlinks.map((navlink, i) => (
+                        <li className='nav-link' key={i}>
+                            <a href='{navlink.href}'>{navlink.title}</a>
+                        </li>
+                    ))}
                 </ul>
             </div>
         )
@@ -119,10 +115,10 @@ export default class Navbar extends Component {
      */
     render() {
         return (
-            <div>
-                <Mobile><NavbarM {...this.props}/></Mobile>
-                <Desktop><NavbarD {...this.props}/></Desktop>
-            </div>
+            <ResponsiveSwitcher
+                onDesktop={NavbarD}
+                onMobile={NavbarM}
+                {...this.props}/>
         )
     }
 }

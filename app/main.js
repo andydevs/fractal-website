@@ -9,7 +9,8 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Navbar from './navbar'
-import Jumbotron from './jumbotron'
+import Page from './page'
+import homepage from './pages/home.markdown'
 import './resources/style/main.scss'
 
 /**
@@ -36,10 +37,11 @@ class FractalWebsite extends Component {
                         {link: '#', title: 'Development'}
                     ]}/>
                 <div className='content'>
-                    <Jumbotron
+                    <Page
                         imgurl='app/resources/images/jumbotron.jpg'
                         title='Algorithmic Art'
-                        subtitle='Creating Fractal Images using OpenCL'/>
+                        subtitle='Creating Fractal Images using OpenCL'
+                        source={homepage}/>
                 </div>
             </div>
         )
