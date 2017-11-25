@@ -29,7 +29,7 @@ class FractalWebsite extends Component {
         return (
             <div className='main'>
                 <Navbar
-                    title='Fractal Generator'
+                    title='Fractal Design'
                     home='#'
                     navlinks={[
                         {link: '#', title: 'Images'},
@@ -39,8 +39,8 @@ class FractalWebsite extends Component {
                 <div className='content'>
                     <Page
                         imgurl='app/resources/images/jumbotron.jpg'
-                        title='Algorithmic Art'
-                        subtitle='Creating Fractal Images using OpenCL'
+                        title='Fractal Design Page'
+                        subtitle='Experimenting with creating a Webpage'
                         source={homepage}/>
                 </div>
             </div>
