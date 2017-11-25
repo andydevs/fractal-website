@@ -8,9 +8,6 @@ $primary-color: #0600a7;
 $mobile-width: 500px;
 
 // Flex spacing mixins
-@mixin element {
-    flex-grow: 1;
-}
 @mixin row-group {
     display: flex;
     flex-direction: row;
@@ -20,6 +17,9 @@ $mobile-width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+@mixin block-group {
+    display: block;
 }
 /**
  * "Show up in that new Mercedes, you already know I'm faded
@@ -31,4 +31,5 @@ $mobile-width: 500px;
 }
 
 // Imports
-@import "navbar"
+@import "navbar",
+        "mobile/navbar-m"

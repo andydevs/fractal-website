@@ -25,7 +25,14 @@ class FractalWebsite extends Component {
      */
     render() {
         return (
-            <Navbar />
+            <Navbar
+                title='Fractal Generator'
+                home='#'
+                navlinks={[
+                    {link: '#', title: 'Images'},
+                    {link: '#', title: 'Algorithm'},
+                    {link: '#', title: 'Development'}
+                ]}/>
         )
     }
 }

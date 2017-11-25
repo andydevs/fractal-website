@@ -7,8 +7,8 @@
  * Created: 11 - 24 - 2017
  */
 
-.navbar {
-    @include row-group;
+.navbar-m {
+    @include block-group;
 
     // Position
     position: absolute;
@@ -23,17 +23,17 @@
     background-color: $primary-color;
     color: white;
 
-    .nav-header {
-        flex-grow: 1;
+    .nav-header-m {
         @include row-group;
 
         // No padding
         margin: 0pt;
         padding: 0pt;
-        
+
         // Title
-        .nav-title {
+        .nav-title-m {
             @include faded;
+            flex-grow: 1;
 
             // Remove spacing
             margin: 0pt;
@@ -50,12 +50,42 @@
                 color: $primary-color;
             }
         }
+
+        // Hide nav-toggle container
+        .nav-toggle-container-m {
+            padding: 10pt;
+
+            // Nav toggle button
+            .nav-toggle-m {
+                @include faded;
+
+                // Sizing
+                width: 35px;
+                height: 35px;
+
+                // background
+                background: none;
+                background-image: url('../icons/menu.svg');
+                background-size: 70%;
+                background-position: center;
+                background-repeat: no-repeat;
+
+                // Border
+                border: 1px solid white;
+                border-radius: 5pt;
+
+                // Active selector
+                &.active-m {
+                    background-color: white;
+                    background-image: url('../icons/menu-selected.svg');
+                }
+            }
+        }
     }
 
     // Navigation links
-    .nav-link-set {
-        flex-grow: 1;
-        @include row-group;
+    .nav-link-set-m {
+        @include block-group;
 
         // Remove list settings
         list-style: none;
@@ -63,21 +93,19 @@
         padding: 0pt;
 
         // Single link item
-        .nav-link {
-            flex-grow: 1;
-            @include col-group;
+        .nav-link-m {
+            @include block-group;
 
             // Font size
             font-size: 10pt;
 
             // Link thing
             a {
-                @include col-group;
+                @include block-group;
                 @include faded;
 
-                // Sizing and alignment
-                flex-grow: 1;
-                text-align: center;
+                // Sizing and alignment=
+                text-align: right;
                 padding: 10pt;
 
                 // Design
