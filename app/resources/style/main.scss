@@ -1,0 +1,34 @@
+// Fonts
+$main-font: "Calibri", sans-serif;
+
+// Coloring
+$primary-color: #0600a7;
+
+// Screen width
+$mobile-width: 500px;
+
+// Flex spacing mixins
+@mixin element {
+    flex-grow: 1;
+}
+@mixin row-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+@mixin col-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/**
+ * "Show up in that new Mercedes, you already know I'm faded
+ * Girl I've been thinkin' about you lately
+ * Oh-oh, oh-ohhh" - Post Malone
+ */
+@mixin faded {
+    transition: 0.2s ease-in-out;
+}
+
+// Imports
+@import "navbar"

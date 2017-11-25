@@ -1,0 +1,118 @@
+.navbar {
+    @include row-group;
+
+    // Position
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    // Font
+    font-family: $main-font;
+
+    // Coloring
+    background-color: $primary-color;
+    color: white;
+
+    .nav-header {
+        flex-grow: 1;
+        @include row-group;
+
+        // No padding
+        margin: 0pt;
+        padding: 0pt;
+
+        // Hide nav-toggle container
+        .nav-toggle-container {
+            display: none;
+
+            // Nav toggle button
+            .nav-toggle {
+                @include faded;
+
+                // Sizing
+                width: 35px;
+                height: 35px;
+
+                // background
+                background: none;
+                background-image: url('../icons/menu.svg');
+                background-size: 70%;
+                background-position: center;
+                background-repeat: no-repeat;
+
+                // Border
+                border: 1px solid white;
+                border-radius: 5pt;
+
+                // Active selector
+                &.active {
+                    background-color: white;
+                    background-image: url('../icons/menu-selected.svg');
+                }
+            }
+        }
+
+        // Title
+        .nav-title {
+            @include faded;
+
+            // Remove spacing
+            margin: 0pt;
+            padding: 10pt;
+
+            // Design
+            color: white;
+            font-size: 20pt;
+            text-decoration: none;
+
+            // On hover
+            &:hover {
+                background-color: white;
+                color: $primary-color;
+            }
+        }
+    }
+
+    // Navigation links
+    .nav-link-set {
+        flex-grow: 1;
+        @include row-group;
+
+        // Remove list settings
+        list-style: none;
+        margin: 0;
+        padding: 0pt;
+
+        // Single link item
+        .nav-link {
+            flex-grow: 1;
+            @include col-group;
+
+            // Font size
+            font-size: 10pt;
+
+            // Link thing
+            a {
+                @include col-group;
+                @include faded;
+
+                // Sizing and alignment
+                flex-grow: 1;
+                text-align: center;
+                padding: 10pt;
+
+                // Design
+                color: white;
+                text-decoration: none;
+
+                // Link on hover
+                &:hover {
+                    // Design
+                    background-color: white;
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}

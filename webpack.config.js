@@ -12,7 +12,7 @@ const path = require('path');
 
 // Webpack module
 module.exports = {
-    entry: './app/main.jsx',
+    entry: './app/main.js',
     output: {
         path: path.join(__dirname, 'build'),
         filename: 'bundle.js'
@@ -31,8 +31,17 @@ module.exports = {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 loaders: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.svg$/,
+                exclude: /node_modules/,
+                loader: 'url-loader'
             }
         ]
     },
-    plugins: [new HtmlWebpackPlugin({title: 'Fractal Website'})]
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './app/resources/html/index.html'
+        })
+    ]
 }
