@@ -40,7 +40,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ## Code
 
-Making the `fizzbuzz` program in python
+The `fizzbuzz` program in python
 
     for i in range(100):
         if i % 5 == 0 and i % 3 == 0:

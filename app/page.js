@@ -7,7 +7,6 @@
  * Created: 11 - 24 - 2017
  */
 import React, { Component } from 'react'
-import Markdown from 'react-remarkable'
 import Jumbotron from './jumbotron'
 
 /**
@@ -27,7 +26,7 @@ export default class Page extends Component {
             <div className='page'>
                 <Jumbotron {...this.props}/>
                 <div className='page-content'>
-                    <Markdown source={this.props.source}/>
+                    {this.props.children}
                 </div>
             </div>
         )

@@ -12,6 +12,16 @@ $main-font: "Calibri", sans-serif;
 // Coloring
 $primary-color: #2d28a2;
 
+// Mobile Width
+$mobile-width: 500px;
+
+// On Mobile
+@mixin on-mobile {
+    @media only screen and (max-width: $mobile-width) {
+        @content;
+    }
+}
+
 // Flex spacing mixins
 @mixin row-group {
     display: flex;
@@ -25,6 +35,10 @@ $primary-color: #2d28a2;
 }
 @mixin block-group {
     display: block;
+}
+
+@mixin bordered {
+    border: 2pt solid black;
 }
 /**
  * "Show up in that new Mercedes, you already know I'm faded
@@ -40,7 +54,8 @@ $primary-color: #2d28a2;
         "jumbotron",
         "page",
         "mobile/navbar-m",
-        "mobile/jumbotron-m";
+        "mobile/jumbotron-m",
+        "gallery";
 
 // App div
 #fractal-website {
