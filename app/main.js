@@ -10,8 +10,17 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Navbar from './navbar'
 import Page from './page'
-import homepage from './pages/home.markdown'
+import homePage from './pages/home.markdown'
 import './resources/style/main.scss'
+
+// Home page
+const Home = () => (
+    <Page
+        imgurl='app/resources/images/jumbotron.jpg'
+        title='Fractal Design Page'
+        subtitle='Experimenting with creating a Webpage'
+        source={homePage}/>
+)
 
 /**
  * Main web application class
@@ -36,11 +45,7 @@ class FractalWebsite extends Component {
                         {link: '#', title: 'Algorithm'},
                         {link: '#', title: 'Development'}
                     ]}/>
-                <Page
-                    imgurl='app/resources/images/jumbotron.jpg'
-                    title='Fractal Design Page'
-                    subtitle='Experimenting with creating a Webpage'
-                    source={homepage}/>
+                <Home />
             </div>
         )
     }

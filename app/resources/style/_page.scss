@@ -38,6 +38,8 @@
         // Coloring
         color: $primary-color;
         text-decoration: none;
+
+        // On hover
         &:hover {
             background-color: $primary-color;
             color: white;
