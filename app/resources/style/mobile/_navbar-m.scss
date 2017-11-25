@@ -6,119 +6,64 @@
  * Author:  Anshul Kharbanda
  * Created: 11 - 24 - 2017
  */
+ // Navbar for mobile
+ .navbar-m {
+     @extend .navbar;
+     @include block-group;
 
-.navbar-m {
-    @include block-group;
+     // Header
+     .nav-header-m {
+         @extend .nav-header;
+         @include row-group;
 
-    // Position
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+         // Title
+         .nav-title-m {
+             @extend .nav-title;
+             flex-grow: 1;
+         }
 
-    // Font
-    font-family: $main-font;
+         // Hide nav-toggle container
+         .nav-toggle-container-m {
+             padding: 10pt;
 
-    // Coloring
-    background-color: $primary-color;
-    color: white;
+             // Nav toggle button
+             .nav-toggle-m {
+                 @include faded;
 
-    .nav-header-m {
-        @include row-group;
+                 // Sizing
+                 width: 35px;
+                 height: 35px;
 
-        // No padding
-        margin: 0pt;
-        padding: 0pt;
+                 // background
+                 background: none;
+                 background-image: url('../icons/menu.svg');
+                 background-size: 70%;
+                 background-position: center;
+                 background-repeat: no-repeat;
 
-        // Title
-        .nav-title-m {
-            @include faded;
-            flex-grow: 1;
+                 // Border
+                 border: 1px solid white;
+                 border-radius: 5pt;
 
-            // Remove spacing
-            margin: 0pt;
-            padding: 10pt;
+                 // Active selector
+                 &.active-m {
+                     background-color: white;
+                     background-image: url('../icons/menu-selected.svg');
+                 }
+             }
+         }
+     }
 
-            // Design
-            color: white;
-            font-size: 20pt;
-            text-decoration: none;
+     // Navigation links
+     .nav-link-set-m {
+         @extend .nav-link-set;
+         @include block-group;
 
-            // On hover
-            &:hover {
-                background-color: white;
-                color: $primary-color;
-            }
-        }
-
-        // Hide nav-toggle container
-        .nav-toggle-container-m {
-            padding: 10pt;
-
-            // Nav toggle button
-            .nav-toggle-m {
-                @include faded;
-
-                // Sizing
-                width: 35px;
-                height: 35px;
-
-                // background
-                background: none;
-                background-image: url('../icons/menu.svg');
-                background-size: 70%;
-                background-position: center;
-                background-repeat: no-repeat;
-
-                // Border
-                border: 1px solid white;
-                border-radius: 5pt;
-
-                // Active selector
-                &.active-m {
-                    background-color: white;
-                    background-image: url('../icons/menu-selected.svg');
-                }
-            }
-        }
-    }
-
-    // Navigation links
-    .nav-link-set-m {
-        @include block-group;
-
-        // Remove list settings
-        list-style: none;
-        margin: 0;
-        padding: 0pt;
-
-        // Single link item
-        .nav-link-m {
-            @include block-group;
-
-            // Font size
-            font-size: 10pt;
-
-            // Link thing
-            a {
-                @include block-group;
-                @include faded;
-
-                // Sizing and alignment=
-                text-align: right;
-                padding: 10pt;
-
-                // Design
-                color: white;
-                text-decoration: none;
-
-                // Link on hover
-                &:hover {
-                    // Design
-                    background-color: white;
-                    color: $primary-color;
-                }
-            }
-        }
-    }
-}
+         // Single link item
+         .nav-link-m {
+             @extend .nav-link;
+             @include block-group;
+             a { text-align: right; }
+         }
+     }
+ }

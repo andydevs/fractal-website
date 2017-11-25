@@ -9,6 +9,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Navbar from './navbar'
+import Jumbotron from './jumbotron'
 import './resources/style/main.scss'
 
 /**
@@ -25,14 +26,22 @@ class FractalWebsite extends Component {
      */
     render() {
         return (
-            <Navbar
-                title='Fractal Generator'
-                home='#'
-                navlinks={[
-                    {link: '#', title: 'Images'},
-                    {link: '#', title: 'Algorithm'},
-                    {link: '#', title: 'Development'}
-                ]}/>
+            <div className='main'>
+                <Navbar
+                    title='Fractal Generator'
+                    home='#'
+                    navlinks={[
+                        {link: '#', title: 'Images'},
+                        {link: '#', title: 'Algorithm'},
+                        {link: '#', title: 'Development'}
+                    ]}/>
+                <div className='content'>
+                    <Jumbotron
+                        imgurl='app/resources/images/jumbotron.jpg'
+                        title='Algorithmic Art'
+                        subtitle='Creating Fractal Images using OpenCL'/>
+                </div>
+            </div>
         )
     }
 }

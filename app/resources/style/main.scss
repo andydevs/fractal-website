@@ -1,4 +1,12 @@
-// Fonts
+/**
+ * Fractal Website
+ *
+ * Test for designing websites using ReactJS and Webpack
+ *
+ * Author:  Anshul Kharbanda
+ * Created: 11 - 24 - 2017
+ */
+// Fonts and colors
 $main-font: "Calibri", sans-serif;
 
 // Coloring
@@ -32,4 +40,23 @@ $mobile-width: 500px;
 
 // Imports
 @import "navbar",
-        "mobile/navbar-m"
+        "jumbotron",
+        "mobile/navbar-m",
+        "mobile/jumbotron-m";
+
+// Main div
+.main {
+    // Full screen
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    // Create flexbox
+    display: flex;
+    flex-direction: column;
+}
+
+// Content div
+.content { flex-grow: 1; }

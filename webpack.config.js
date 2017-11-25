@@ -33,7 +33,7 @@ module.exports = {
                 loaders: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.svg$/,
+                test: /\.(svg|jpg|jpeg|png)$/,
                 exclude: /node_modules/,
                 loader: 'url-loader'
             }

@@ -1,0 +1,30 @@
+/**
+ * Fractal Website
+ *
+ * Test for designing websites using ReactJS and Webpack
+ *
+ * Author:  Anshul Kharbanda
+ * Created: 11 - 24 - 2017
+ */
+ // Mobile jumbotron
+ .jumbotron-m {
+     @extend .jumbotron;
+     height: 180pt;
+
+     // Mobile container
+     .jt-container-m {
+         @extend .jt-container;
+
+         // Mobile title
+         .jt-title-m {
+             @extend .jt-title;
+             font-size: 20pt;
+         }
+
+         // Mobile subtitle
+         .jt-subtitle-m {
+             @extend .jt-subtitle;
+             font-size: 14pt;
+         }
+     }
+ }

@@ -6,15 +6,9 @@
  * Author:  Anshul Kharbanda
  * Created: 11 - 24 - 2017
  */
-
+// Main navbar
 .navbar {
     @include row-group;
-
-    // Position
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
 
     // Font
     font-family: $main-font;
@@ -23,6 +17,7 @@
     background-color: $primary-color;
     color: white;
 
+    // Header part
     .nav-header {
         flex-grow: 1;
         @include row-group;
@@ -30,7 +25,7 @@
         // No padding
         margin: 0pt;
         padding: 0pt;
-        
+
         // Title
         .nav-title {
             @include faded;

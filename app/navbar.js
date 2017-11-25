@@ -49,7 +49,7 @@ class NavbarM extends Component {
         return (
             <div className='navbar-m'>
                 <div className='nav-header-m'>
-                    <a className='nav-title-m' href='{this.props.home}'>
+                    <a className='nav-title-m' href={this.props.home}>
                         {this.props.title}
                     </a>
                     <div className='nav-toggle-container-m'>
@@ -62,7 +62,7 @@ class NavbarM extends Component {
                         {this.props.navlinks.map((navlink, i) => {
                             return (
                                 <li className='nav-link-m' key={i}>
-                                    <a href='{navlink.href}'>{navlink.title}</a>
+                                    <a href={navlink.href}>{navlink.title}</a>
                                 </li>
                             )
                         })}
