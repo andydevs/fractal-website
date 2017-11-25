@@ -42,8 +42,8 @@ $primary-color: #2d28a2;
         "mobile/navbar-m",
         "mobile/jumbotron-m";
 
-// Main div
-.main {
+// App div
+#fractal-website {
     // Full screen
     position: absolute;
     top: 0;
@@ -55,6 +55,3 @@ $primary-color: #2d28a2;
     display: flex;
     flex-direction: column;
 }
-
-// Content div
-.content { flex-grow: 1; }

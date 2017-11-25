@@ -27,7 +27,7 @@ class FractalWebsite extends Component {
      */
     render() {
         return (
-            <div className='main'>
+            <div id='fractal-website'>
                 <Navbar
                     title='Fractal Design'
                     home='#'
@@ -36,19 +36,15 @@ class FractalWebsite extends Component {
                         {link: '#', title: 'Algorithm'},
                         {link: '#', title: 'Development'}
                     ]}/>
-                <div className='content'>
-                    <Page
-                        imgurl='app/resources/images/jumbotron.jpg'
-                        title='Fractal Design Page'
-                        subtitle='Experimenting with creating a Webpage'
-                        source={homepage}/>
-                </div>
+                <Page
+                    imgurl='app/resources/images/jumbotron.jpg'
+                    title='Fractal Design Page'
+                    subtitle='Experimenting with creating a Webpage'
+                    source={homepage}/>
             </div>
         )
     }
 }
 
 // Render react app
-ReactDOM.render(
-    <FractalWebsite />,
-    document.getElementById('app'))
+ReactDOM.render(<FractalWebsite />, document.body)
