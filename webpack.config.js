@@ -15,7 +15,8 @@ module.exports = {
     entry: './app/main.js',
     output: {
         path: path.join(__dirname, 'build'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     module: {
         loaders: [
@@ -43,6 +44,9 @@ module.exports = {
                 loader: 'raw-loader'
             }
         ]
+    },
+    devServer: {
+        historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({

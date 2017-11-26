@@ -7,6 +7,7 @@
  * Created: 11 - 24 - 2017
  */
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import AnimateHeight from 'react-animate-height'
 import ResponsiveSwitcher from './responsive'
 
@@ -49,9 +50,9 @@ class NavbarM extends Component {
         return (
             <div className='navbar-m'>
                 <div className='nav-header-m'>
-                    <a className='nav-title-m' href={this.props.home}>
+                    <NavLink className='nav-title-m' to={this.props.home}>
                         {this.props.title}
-                    </a>
+                    </NavLink>
                     <div className='nav-toggle-container-m'>
                         <button className={'nav-toggle-m' + (this.state.toggled ? ' active-m' : '')}
                                 onClick={this.toggle}></button>
@@ -61,7 +62,9 @@ class NavbarM extends Component {
                     <ul className='nav-link-set-m'>
                         {this.props.navlinks.map((navlink, i) => (
                             <li className='nav-link-m' key={i}>
-                                <a href={navlink.href}>{navlink.title}</a>
+                                <NavLink to={navlink.href}>
+                                    {navlink.title}
+                                </NavLink>
                             </li>
                         ))}
                     </ul>
@@ -87,12 +90,16 @@ class NavbarD extends Component {
         return (
             <div className='navbar'>
                 <div className='nav-header'>
-                    <a className='nav-title' href='{this.props.home}'>{this.props.title}</a>
+                    <NavLink className='nav-title' to={this.props.home}>
+                        {this.props.title}
+                    </NavLink>
                 </div>
                 <ul className='nav-link-set'>
                     {this.props.navlinks.map((navlink, i) => (
                         <li className='nav-link' key={i}>
-                            <a href='{navlink.href}'>{navlink.title}</a>
+                            <NavLink to={navlink.href}>
+                                {navlink.title}
+                            </NavLink>
                         </li>
                     ))}
                 </ul>

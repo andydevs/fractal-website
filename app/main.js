@@ -8,11 +8,14 @@
  */
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import Navbar from './navbar'
 import Page from './page'
 import Markdown from 'react-remarkable'
 import Gallery from './gallery'
 import homePage from './pages/home.markdown'
+import algorithmPage from './pages/algorithm.markdown'
+import developmentPage from './pages/development.markdown'
 import './resources/style/main.scss'
 
 // Home page
@@ -43,6 +46,26 @@ const Images = () => (
     </Page>
 )
 
+// Algorithm Page
+const Algorithm = () => (
+    <Page
+        imgurl='app/resources/images/jimage.jpg'
+        title='The Fractal Image Algorithm'
+        subtitle='Creating the fractal images'>
+        <Markdown source={algorithmPage}/>
+    </Page>
+)
+
+// Development Page
+const Development = () => (
+    <Page
+        imgurl='app/resources/images/hpe.jpg'
+        title='Developing the Fractal Algorithm'
+        subtitle='Using CImg for image writing, and PugiXML for configuration'>
+        <Markdown source={developmentPage}/>
+    </Page>
+)
+
 /**
  * Main web application class
  *
@@ -57,17 +80,22 @@ class FractalWebsite extends Component {
      */
     render() {
         return (
-            <div id='fractal-website'>
-                <Navbar
-                    title='Fractal Design'
-                    home='#'
-                    navlinks={[
-                        {link: '#', title: 'Images'},
-                        {link: '#', title: 'Algorithm'},
-                        {link: '#', title: 'Development'}
-                    ]}/>
-                <Images />
-            </div>
+            <BrowserRouter>
+                <div id='fractal-website'>
+                    <Navbar
+                        title='Fractal Design'
+                        home='/'
+                        navlinks={[
+                            {href: '/images', title: 'Images'},
+                            {href: '/algorithm', title: 'Algorithm'},
+                            {href: '/development', title: 'Development'}
+                        ]}/>
+                    <Route exact path='/' component={Home}/>
+                    <Route path='/images' component={Images}/>
+                    <Route path='/algorithm' component={Algorithm}/>
+                    <Route path='/development' component={Development}/>
+                </div>
+            </BrowserRouter>
         )
     }
 }
