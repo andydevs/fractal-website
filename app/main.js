@@ -7,17 +7,22 @@
  * Created: 11 - 24 - 2017
  */
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
+import Markdown from 'react-remarkable'
 import Navbar from './navbar'
 import Page from './page'
-import Markdown from 'react-remarkable'
 import Gallery from './gallery'
 import homePage from './pages/home.markdown'
 import algorithmPage from './pages/algorithm.markdown'
 import './resources/style/main.scss'
 
-// Home page
+/**
+ * Home page of the website
+ *
+ * Author:  Anshul Kharbanda
+ * Created: 11 - 24 - 2017
+ */
 const Home = () => (
     <Page
         imgurl='app/resources/images/fimage.jpg'
@@ -27,7 +32,12 @@ const Home = () => (
     </Page>
 )
 
-// Images page
+/**
+ * Images page of the website
+ *
+ * Author:  Anshul Kharbanda
+ * Created: 11 - 24 - 2017
+ */
 const Images = () => (
     <Page
         imgurl='app/resources/images/fimage2.jpg'
@@ -45,7 +55,12 @@ const Images = () => (
     </Page>
 )
 
-// Algorithm Page
+/**
+ * Algorithm page of the website
+ *
+ * Author:  Anshul Kharbanda
+ * Created: 11 - 24 - 2017
+ */
 const Algorithm = () => (
     <Page
         imgurl='app/resources/images/jimage.jpg'
@@ -61,31 +76,22 @@ const Algorithm = () => (
  * Author:  Anshul Kharbanda
  * Created: 11 - 24 - 2017
  */
-class FractalWebsite extends Component {
-    /**
-     * Renders component
-     *
-     * @return component rendering
-     */
-    render() {
-        return (
-            <BrowserRouter>
-                <div id='fractal-website'>
-                    <Navbar
-                        title='Fractal Design'
-                        home='/'
-                        navlinks={[
-                            {href: '/images', title: 'Images'},
-                            {href: '/algorithm', title: 'Algorithm'}
-                        ]}/>
-                    <Route exact path='/' component={Home}/>
-                    <Route path='/images' component={Images}/>
-                    <Route path='/algorithm' component={Algorithm}/>
-                </div>
-            </BrowserRouter>
-        )
-    }
-}
+const FractalWebsite = () => (
+    <BrowserRouter>
+        <div id='fractal-website'>
+            <Navbar
+                title='Fractal Design'
+                home='/'
+                navlinks={[
+                    {href: '/images', title: 'Images'},
+                    {href: '/algorithm', title: 'Algorithm'}
+                ]}/>
+            <Route exact path='/' component={Home}/>
+            <Route path='/images' component={Images}/>
+            <Route path='/algorithm' component={Algorithm}/>
+        </div>
+    </BrowserRouter>
+)
 
 // Render react app
-ReactDOM.render(<FractalWebsite />, document.body)
+render(<FractalWebsite />, document.getElementById('app'))
