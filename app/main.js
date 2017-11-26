@@ -15,7 +15,6 @@ import Markdown from 'react-remarkable'
 import Gallery from './gallery'
 import homePage from './pages/home.markdown'
 import algorithmPage from './pages/algorithm.markdown'
-import developmentPage from './pages/development.markdown'
 import './resources/style/main.scss'
 
 // Home page
@@ -56,16 +55,6 @@ const Algorithm = () => (
     </Page>
 )
 
-// Development Page
-const Development = () => (
-    <Page
-        imgurl='app/resources/images/hpe.jpg'
-        title='Developing the Fractal Algorithm'
-        subtitle='Using CImg for image writing, and PugiXML for configuration'>
-        <Markdown source={developmentPage}/>
-    </Page>
-)
-
 /**
  * Main web application class
  *
@@ -87,13 +76,11 @@ class FractalWebsite extends Component {
                         home='/'
                         navlinks={[
                             {href: '/images', title: 'Images'},
-                            {href: '/algorithm', title: 'Algorithm'},
-                            {href: '/development', title: 'Development'}
+                            {href: '/algorithm', title: 'Algorithm'}
                         ]}/>
                     <Route exact path='/' component={Home}/>
                     <Route path='/images' component={Images}/>
                     <Route path='/algorithm' component={Algorithm}/>
-                    <Route path='/development' component={Development}/>
                 </div>
             </BrowserRouter>
         )

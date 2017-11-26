@@ -1,18 +1,10 @@
-# Fractal Generator
-
-A program that generates Julia and Mandelbrot set fractal images.
-
-![Julia Set Image (f(z) = z^2 + c, c = -0.4 + 0.6i)](app/resources/images/fimage.jpg)
-
-# Usage
-
-## Installation (clone and build)
+# Installation (clone and build)
 
 NOTE: Project can only be built on bash-based platforms (so macOS, Linux, or cygwin).
 
 Make sure that you have `make` and `g++` installed. Both of these can be acquired using `apt-get`. Clone the git repository into your local machine using `git clone` and entering the remote repository. You can then build and install using `make install`. This will build the project and install the binary in `/usr/bin`.
 
-## Command line Interface
+# Command line Interface
 
 The program uses CImg option parsing to retrieve command line arguments. To set options, type the name of the option, followed by the value of the option: `$ juliaset -[name] [value] ...`. If the value is a boolean, you can just type the name of the option to set it to true: `$ juliaset -[boolean-option]`. Options do not have to be put in any order.
 
@@ -35,7 +27,7 @@ Here are a list of options:
 |     -test     | Generates a 400x300 test image (saved to the savename) for the set colormap | false      |
 | -help (or -h) | Prints the help message                                                     | false      |
 
-### Using an XML File
+## Using an XML File
 
 You can also run the fractal generator with an xml file containing all of the information of the fractals being generated to the program, rather than put the info in manually. Just type `fractal -xml [your xml file]` in the command line. To generate a specific fractal in the file, use the `-id` option: `fractal -xml [your xml file] -id [id of image to generate]`. ID's are discussed in the xml definition.
 
@@ -63,11 +55,11 @@ The size tag is required and must define a height and width component, which cor
 
 The transform component defines the transformation of the image (the zoom, offset, and angle). The angle represented by the attribute `angle` (defaults to 0), and the zoom is represented by the attribute `zoom` (defaults to 1). The offset is represented by a child tag in the transform named offset. It is identical to the complex tag, in that it has `real` and `imag` attributes which define the real and imaginary components of the offset complex.
 
-#### Colormaps
+### Colormaps
 
 The colormap tag defines the colormap to use when generating the image. This can be defined in one of three ways.
 
-#### Gradient
+### Gradient
 
 The gradient type linearly interpolates between two given color values. The gradient requires that a `start` and `end` tag be defined, which color values as integers. These are the start and end color values respectfully.
 
@@ -78,7 +70,7 @@ The gradient type linearly interpolates between two given color values. The grad
 </colormap>
 ```
 
-#### Rainbow
+### Rainbow
 
 The rainbow type computes three sinusoidal functions for the red green and blue values of the color, each with it's own phase and frequency. The rainbow type requires `phase` and `freq` components, both of which require `r`, `g`, and `b` attributes which define the red, green, and blue values of both paramters respectfully. These values have defaults, for `phase`, these are all 0, and for `freq`, these are all 1.
 
@@ -89,7 +81,7 @@ The rainbow type computes three sinusoidal functions for the red green and blue 
 </colormap>
 ```
 
-#### Preset
+### Preset
 
 Finally, you can set a preset colormap instead using the `preset` attribute. The value of the attribute is the name of the preset, and this attribute supercedes all other options, i.e. if the preset is set, the colormap will be set to the preset, and not be defined by any other parameters set.
 
