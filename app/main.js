@@ -81,7 +81,6 @@ const FractalWebsite = () => (
         <div id='fractal-website'>
             <Navbar
                 title='Fractal Design'
-                home='/'
                 navlinks={[
                     {href: '/images', title: 'Images'},
                     {href: '/algorithm', title: 'Algorithm'}
