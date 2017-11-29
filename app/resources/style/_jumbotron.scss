@@ -16,7 +16,10 @@
     display: block;
     margin: 0pt;
     padding: 10pt;
+
+    // Responsive height
     height: 280pt;
+    @include on-mobile { height: 180pt; };
 
     // Background
     background-color: gray;
@@ -42,26 +45,23 @@
         .jt-title {
             border: none;
             color: white;
-            font-size: 25pt;
             font-weight: bold;
             margin: 0pt;
+
+            // Responsive font size
+            font-size: 25pt;
+            @include on-mobile { font-size: 20pt; };
         }
 
         // And subtitle
         .jt-subtitle {
             color: white;
-            font-size: 15pt;
             font-weight: normal;
             margin: 0pt;
-        }
-    }
 
-    // Mobile jumbotron
-    @include on-mobile {
-        height: 180pt;
-        .jt-container {
-            .jt-title { font-size: 20pt; }
-            .jt-subtitle { font-size: 14pt; }
+            // Responsive font size
+            font-size: 15pt;
+            @include on-mobile { font-size: 14pt; };
         }
     }
 }

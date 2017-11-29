@@ -28,13 +28,27 @@ $mobile-width: 500px;
     flex-direction: row;
     justify-content: left;
 }
+@mixin responsive-row-group {
+    @include row-group;
+    @include on-mobile { display: block; };
+}
 @mixin col-group {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+@mixin responsive-col-group {
+    @include col-group;
+    @include on-mobile { display: block; };
+}
 @mixin block-group {
     display: block;
+}
+@mixin visible-on-mobile($display-type) {
+    display: none;
+    @include on-mobile {
+        display: $display-type;
+    };
 }
 /**
  * "Show up in that new Mercedes, you already know I'm faded
