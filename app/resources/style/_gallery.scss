@@ -7,11 +7,9 @@
  * Created: 11 - 24 - 2017
  */
 .gallery {
-    padding: 10pt;
-    font-family: $main-font;
-
     // Gallery content
     .g-content {
+        @extend .page-content;
         @include row-group;
 
         // Columns

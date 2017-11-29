@@ -64,7 +64,8 @@ $mobile-width: 500px;
 }
 
 // Imports
-@import "navbar",
+@import "base",
+        "navbar",
         "footer",
         "jumbotron",
         "page",
