@@ -49,14 +49,6 @@ $mobile-width: 500px;
     transition: 0.2s ease-in-out;
 }
 
-// Imports
-@import "navbar",
-        "jumbotron",
-        "page",
-        "mobile/navbar-m",
-        "mobile/jumbotron-m",
-        "gallery";
-
 // App div
 #fractal-website {
     // Full screen
@@ -70,3 +62,12 @@ $mobile-width: 500px;
     display: flex;
     flex-direction: column;
 }
+
+// Imports
+@import "navbar",
+        "footer",
+        "jumbotron",
+        "page",
+        "gallery",
+        "mobile/navbar-m",
+        "mobile/jumbotron-m";

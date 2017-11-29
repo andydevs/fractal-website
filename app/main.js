@@ -7,10 +7,11 @@
  * Created: 11 - 24 - 2017
  */
 import React, { Component } from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
 import Markdown from 'react-remarkable'
 import Navbar from './navbar'
+import Footer from './footer'
 import Page from './page'
 import Gallery from './gallery'
 import homePage from './pages/home.markdown'
@@ -88,9 +89,10 @@ const FractalWebsite = () => (
             <Route exact path='/' component={Home}/>
             <Route path='/images' component={Images}/>
             <Route path='/algorithm' component={Algorithm}/>
+            <Footer/>
         </div>
     </BrowserRouter>
 )
 
 // Render react app
-render(<FractalWebsite />, document.getElementById('app'))
+ReactDOM.render(<FractalWebsite />, document.getElementById('app'))

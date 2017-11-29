@@ -1,0 +1,22 @@
+/**
+ * Fractal Website
+ *
+ * Test for designing websites using ReactJS and Webpack
+ *
+ * Author:  Anshul Kharbanda
+ * Created: 11 - 24 - 2017
+ */
+.footer {
+    // Font
+    font-family: $main-font;
+
+    // Alignment and spacing
+    text-align: center;
+    padding: 5pt;
+
+    // Coloring
+    background-color: lighten($primary-color, 50%);
+
+    // Footer items
+    .f-item { margin: 5pt; }
+}
