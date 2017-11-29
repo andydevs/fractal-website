@@ -6,6 +6,18 @@
  * Author:  Anshul Kharbanda
  * Created: 11 - 24 - 2017
  */
+
+// Nav-toggle animation
+@keyframes grow {
+    from { height: 0pt; }
+    to { height: auto; }
+}
+
+@keyframes shrink {
+    from { height: auto; }
+    to { height: 0pt; }
+}
+
 // Main navbar
 .navbar {
     @include row-group;
@@ -44,6 +56,11 @@
                 background-color: white;
                 color: $primary-color;
             }
+        }
+
+        .nav-toggle-container {
+            display: none;
+
         }
     }
 
@@ -86,4 +103,63 @@
             }
         }
     }
+
+    // On mobile
+    @include on-mobile {
+        display: block;
+
+        // Header
+        .nav-header {
+            // Title
+            .nav-title { flex-grow: 1; }
+
+            // Nav toggle container
+            .nav-toggle-container {
+                @include block-group;
+                padding: 8pt;
+
+                // Nav toggle button
+                .nav-toggle {
+                    @include faded;
+
+                    // Sizing
+                    width: 40px;
+                    height: 40px;
+
+                    // background
+                    background: none;
+                    background-image: url('../icons/menu.svg');
+                    background-size: 70%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+
+                    // Border
+                    border: none;
+                    border-radius: 5pt;
+
+                    // Active selector
+                    &.active {
+                        background-color: white;
+                        background-image: url('../icons/menu-selected.svg');
+                    }
+                }
+            }
+        }
+
+        // Navigation links
+        .nav-link-set {
+            @include block-group;
+            @include faded;
+            max-height: 0px;
+
+            // Active state
+            &.active { max-height: 120px; }
+
+            // Single link item
+            .nav-link {
+                @include block-group;
+                a { text-align: right; }
+            }
+        }
+    };
 }

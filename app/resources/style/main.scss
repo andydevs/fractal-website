@@ -36,10 +36,6 @@ $mobile-width: 500px;
 @mixin block-group {
     display: block;
 }
-
-@mixin bordered {
-    border: 2pt solid black;
-}
 /**
  * "Show up in that new Mercedes, you already know I'm faded
  * Girl I've been thinkin' about you lately
@@ -70,5 +66,4 @@ $mobile-width: 500px;
         "jumbotron",
         "page",
         "gallery",
-        "mobile/navbar-m",
         "mobile/jumbotron-m";

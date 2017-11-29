@@ -23,8 +23,8 @@ export default class Footer extends Component {
     render() {
         return (
             <footer className='footer'>
-                <p class='f-item'>Designed by Anshul Kharbanda 2017</p>
-                <p class='f-item'><a href='https://www.github.com/andydevs'>https://www.github.com/andydevs</a></p>
+                <p className='f-item'>Designed by Anshul Kharbanda 2017</p>
+                <p className='f-item'><a href='https://www.github.com/andydevs'>https://www.github.com/andydevs</a></p>
             </footer>
         )
     }
