@@ -15,7 +15,7 @@ import ResponsiveSwitcher from './responsive'
  * Author:  Anshul Kharbanda
  * Created: 11 - 24 - 2017
  */
-class JumbotronD extends Component {
+export default class Jumbotron extends Component {
     /**
      * Renders component
      *
@@ -30,53 +30,6 @@ class JumbotronD extends Component {
                     <h2 className='jt-subtitle'>{this.props.subtitle}</h2>
                 </div>
             </div>
-        )
-    }
-}
-
-/**
- * Jumbotron component for Mobile
- *
- * Author:  Anshul Kharbanda
- * Created: 11 - 24 - 2017
- */
-class JumbotronM extends Component {
-    /**
-     * Renders component
-     *
-     * @return component rendering
-     */
-    render() {
-        return (
-            <div className='jumbotron-m'
-                 style={{backgroundImage: 'url('+this.props.imgurl+')'}}>
-                <div className='jt-container-m'>
-                    <h1 className='jt-title-m'>{this.props.title}</h1>
-                    <h2 className='jt-subtitle-m'>{this.props.subtitle}</h2>
-                </div>
-            </div>
-        )
-    }
-}
-
-/**
- * Jumbotron component
- *
- * Author:  Anshul Kharbanda
- * Created: 11 - 24 - 2017
- */
-export default class Jumbotron extends Component {
-    /**
-     * Renders component
-     *
-     * @return component rendering
-     */
-    render() {
-        return (
-            <ResponsiveSwitcher
-                onDesktop={JumbotronD}
-                onMobile={JumbotronM}
-                {...this.props}/>
         )
     }
 }
